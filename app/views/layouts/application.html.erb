@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WOW Community API</title>
+  <%= stylesheet_link_tag 'web_app_theme' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="/">WOW Community API</a></h1>
+      <div id="main-navigation">
+        <ul class="wat-cf">
+          <li class="first <%=active?('characters') %>"><%= link_to 'Characters', characters_path %></li>
+          <li class="<%=active?('realms') %>"><%= link_to 'Realms', realms_path %></li>
+          <li class="<%=active?('guilds') %>"><%= link_to 'Guilds', guilds_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> WOW Community API.</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div class="block">
+          <h3>Simple Block</h3>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <%= yield :sidebar %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

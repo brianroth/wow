@@ -1,0 +1,33 @@
+<div class='block'>
+  <div class='content'>
+    <h2 class='title'>Listing Guilds</h2>
+    <div class='inner'>
+      <table class='table'>
+        <tbody>
+          <tr>
+            <th class='first'/>
+            <th>Name</th>
+            <th>Realm</th>
+            <th class='last'/>
+          </tr>
+          <% @guilds.each do |guild| %>
+            <tr class='<%=cycle('odd', 'even')%>'>
+              <td/>
+              <td><%= guild.name %></td>
+              <td><%= guild.realm.name %></td>
+              <td><%= link_to 'Show', guild %> | <%= link_to 'Refresh', edit_guild_path(guild) %> | <%= link_to 'Destroy', guild, confirm: 'Are you sure?', method: :delete %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class='actions-bar wat-cf'>
+        <div class='actions'>
+          <%= link_to 'New Guild', new_guild_path %>
+        </div>
+        <div class='pagination'>
+          <%= will_paginate @guilds %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

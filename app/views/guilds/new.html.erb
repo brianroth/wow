@@ -1,0 +1,20 @@
+<div id='block-forms' class='block'>
+  <div class='content'>
+    <h2 class='tite'>Find Guild</h2>
+    <div class='inner'>
+    <%= form_for(@guild, :html => {:class => "form"}) do |f| %>
+      <div class="group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="group">
+        <%= f.label :realm %><br />
+        <%= collection_select(:guild, :realm_id, Realm.all, :id, :name) %>
+      </div>
+      <div class="actions">
+        <input type="submit" value="Search" name="commit">
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

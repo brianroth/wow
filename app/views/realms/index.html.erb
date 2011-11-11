@@ -1,0 +1,36 @@
+<div class='block'>
+  <div class='content'>
+    <h2 class='title'>Listing Realms</h2>
+    <div class='inner'>
+      <table class='table'>
+        <tbody>
+          <tr>
+            <th class='first'/>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Population</th>
+            <th>Battlegroup</th>
+            <th class='last'/>
+          </tr>
+          <% @realms.each do |realm| %>
+            <tr class='<%=cycle('odd', 'even')%>'>
+              <td/>
+              <td><%= realm.name %></td>
+              <td><%= realm.realm_type %></td>
+              <td><%= realm.population %></td>
+              <td><%= realm.battlegroup %></td>
+              <td><%= link_to 'Show', realm %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class='actions-bar wat-cf'>
+        <div class='actions'>
+        </div>
+        <div class='pagination'>
+          <%= will_paginate @realms %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

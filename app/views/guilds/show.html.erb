@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @guild.name %>
+</p>
+
+<p>
+  <b>Realm:</b>
+  <%= @guild.realm.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @guild.level %>
+</p>
+
+<p>
+  <b>Members:</b>
+  <%= @guild.characters.count %>
+</p>
+
+<p>
+  <b>Side:</b>
+  <%= @guild.side %>
+</p>
+
+<%= link_to 'Edit', edit_guild_path(@guild) %> |
+<%= link_to 'Back', guilds_path %>

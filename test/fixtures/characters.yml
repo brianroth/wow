@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  race: 1
+  gender: 1
+  level: 1
+  achievement_points: 1
+  class_id: 1
+  thunbnail: MyString
+  last_activity: 1
+
+two:
+  name: MyString
+  race: 1
+  gender: 1
+  level: 1
+  achievement_points: 1
+  class_id: 1
+  thunbnail: MyString
+  last_activity: 1
